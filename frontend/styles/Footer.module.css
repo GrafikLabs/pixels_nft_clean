@@ -1,0 +1,144 @@
+.footerDetails {
+    padding: 24px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.footerDetails select {
+    font-size: 18px;
+    text-align: left;
+}
+
+.footerDetails>.flexFill {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.footerDetails.designFooter {
+    justify-content: space-between;
+}
+
+.footerDetails select,
+.priceArea,
+.promptArea,
+.actionButton {
+    height: 60px;
+    border-radius: 37px;
+    padding: 18px 32px;
+    min-width: 180px;
+}
+
+.footerDetails select,
+.priceArea,
+.promptArea {
+    border: 1px solid #CCCCCC;
+    background: #ffffff;
+    color: #000000;
+    text-align: center;
+    font-weight: 600;
+}
+
+.promptArea {
+    width: 420px;
+}
+
+.regularPrice,
+.discountedPrice {
+    font-weight: normal;
+}
+
+.regularPrice {
+    color: #868686;
+    text-decoration: line-through;
+    margin-left: 72px;
+}
+
+.discountedPrice {
+    margin: 0 12px;
+}
+
+.fiatPrice {
+    font-size: 14px;
+}
+
+.actionButton {
+    background: #000000;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.actionButton.light {
+    color: #000000;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+}
+
+.actionButton.disabled {
+    background: #bcbcbc;
+}
+
+.colorSwatch {
+    display: flex;
+    gap: 12px;
+    border-radius: 37px;
+    border: 1px solid #DFDFDF;
+    padding: 10px;
+}
+
+.colorChoice {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.colorChoice.wheel {
+    background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+    position: relative;
+}
+
+.wheelPopup {
+    position: absolute;
+    top: -300px;
+    left: -100px;
+    cursor: auto;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    gap: 20px;
+}
+
+.wheelPopup :global(.w-color-alpha-horizontal)>div {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(0, 0, 0)) !important;
+}
+
+.colorChoice.white {
+    border: 1px solid #CCCCCC;
+    background: #FFFFFF;
+    border-color: #CCCCCC;
+}
+
+.colorChoice.selected {
+    border-width: 2px;
+    border-style: solid;
+    box-shadow: inset 0px 0px 0px 4px #ffffff;
+}
+
+.colorChoice.selected.white {
+    box-shadow: inset 0px 0px 0px 4px #CCCCCC;
+}
+
+.divider {
+    height: 60px;
+    width: 1px;
+    background: #DFDFDF;
+    margin: 0 10px;
+}

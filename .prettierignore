@@ -1,0 +1,18 @@
+# Config files
+.*
+
+# Node stuff
+node_modules
+package.json
+
+# Hardhat artifacts
+artifacts
+cache
+deployments
+
+# Istanbul coverage
+coverage*
+coverage.json
+
+# Child project
+frontend

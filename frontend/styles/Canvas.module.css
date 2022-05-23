@@ -1,0 +1,15 @@
+.canvasWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.canvas {
+    width: fit-content;
+    background-color: #ffffff;
+}
+
+.chunk {
+    display: block;
+    background-color: #ffffff;
+}

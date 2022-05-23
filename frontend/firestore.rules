@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function ownedOrUnlocked(owners_collection) {
+      let ownerDoc = get(/databases/$(database)/documents/$(owners_collection)/$(request.resource.id));
+      let owned = ownerDoc.data[request.auth.uid];
+      let unlocked = ownerDoc.data.get("anyone",[]);
+      return request.auth != null &&
+        request.auth.uid in ownerDoc.data &&
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(owned.concat(unlocked));
+    }
+    match /chunks_local/{document=**} {
+    	allow read: if true
+      allow update: if ownedOrUnlocked("owners_local");
+    }
+    match /chunks_dev/{document=**} {
+    	allow read: if true
+      allow update: if ownedOrUnlocked("owners_dev");
+    }
+    match /chunks_prod/{document=**} {
+    	allow read: if true
+      allow update: if ownedOrUnlocked("owners_prod");
+    }
+    
+    match /owners_local/{uid} {
+    	allow read: if true
+      allow write: if false
+    }
+    match /owners_dev/{uid} {
+    	allow read: if true
+      allow write: if false
+    }
+    match /owners_prod/{uid} {
+    	allow read: if true
+      allow write: if false
+    }
+    
+    match /users_local/{uid} {
+    	allow read: if true
+      allow write: if request.auth != null && request.auth.uid == uid
+    }
+    match /users_dev/{uid} {
+    	allow read: if true
+      allow write: if request.auth != null && request.auth.uid == uid
+    }
+    match /users_prod/{uid} {
+    	allow read: if true
+      allow write: if request.auth != null && request.auth.uid == uid
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "address": "0xefAB0Beb0A557E452b398035eA964948c750b2Fd",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "proxies",
+      "outputs": [
+        {
+          "internalType": "contract OwnableDelegateProxy",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "proxy",
+          "type": "address"
+        }
+      ],
+      "name": "setProxy",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xaf544f8fd3ad6edb8cf9be4bd64fb84c116ad0d37530526c37e297a9d1f846fd",
+  "receipt": {
+    "to": null,
+    "from": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "contractAddress": "0xefAB0Beb0A557E452b398035eA964948c750b2Fd",
+    "transactionIndex": 0,
+    "gasUsed": "132787",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x0612968534b38f9dd8438eb3a4701225232cfce8804bc7eb279805823c3d488b",
+    "transactionHash": "0xaf544f8fd3ad6edb8cf9be4bd64fb84c116ad0d37530526c37e297a9d1f846fd",
+    "logs": [],
+    "blockNumber": 14558193,
+    "cumulativeGasUsed": "132787",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "29e6c251a46367ebfca0380b3613092f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.13+commit.abaa5c0e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"proxies\",\"outputs\":[{\"internalType\":\"contract OwnableDelegateProxy\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"proxy\",\"type\":\"address\"}],\"name\":\"setProxy\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/ProxyRegistryMock.sol\":\"ProxyRegistryMock\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":99999999},\"remappings\":[]},\"sources\":{\"contracts/lib/ProxyRegistry.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.13;\\n\\n\\ncontract OwnableDelegateProxy {} // solhint-disable-line\\ncontract ProxyRegistry {\\n  mapping(address => OwnableDelegateProxy) public proxies;\\n}\",\"keccak256\":\"0x8e1422ee43075747741606f5f0a5aac7019b7685baa514ef95cf6e5ec8b24dc1\",\"license\":\"MIT\"},\"contracts/test/ProxyRegistryMock.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.13;\\n\\nimport \\\"../lib/ProxyRegistry.sol\\\";\\n\\ncontract ProxyRegistryMock is ProxyRegistry {\\n  function setProxy(address proxy) public {\\n      proxies[msg.sender] = OwnableDelegateProxy(proxy);\\n  }\\n}\",\"keccak256\":\"0x40d84293a6d2a91f268c5b0ae4815d333d70103bd0be1d4f40a69a04b8e9a063\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610171806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c806397107d6d1461003b578063c45527911461009f575b600080fd5b61009d6100493660046100fe565b33600090815260208190526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b005b6100d56100ad3660046100fe565b60006020819052908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60006020828403121561011057600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811461013457600080fd5b939250505056fea264697066735822122005fd5abdf9d894f27cddfa03de42dd4143e5026e854c1655672d3b9abdb91aa764736f6c634300080d0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c806397107d6d1461003b578063c45527911461009f575b600080fd5b61009d6100493660046100fe565b33600090815260208190526040902080547fffffffffffffffffffffffff00000000000000000000000000000000000000001673ffffffffffffffffffffffffffffffffffffffff92909216919091179055565b005b6100d56100ad3660046100fe565b60006020819052908152604090205473ffffffffffffffffffffffffffffffffffffffff1681565b60405173ffffffffffffffffffffffffffffffffffffffff909116815260200160405180910390f35b60006020828403121561011057600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811461013457600080fd5b939250505056fea264697066735822122005fd5abdf9d894f27cddfa03de42dd4143e5026e854c1655672d3b9abdb91aa764736f6c634300080d0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 3439,
+        "contract": "contracts/test/ProxyRegistryMock.sol:ProxyRegistryMock",
+        "label": "proxies",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_mapping(t_address,t_contract(OwnableDelegateProxy)3434)"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(OwnableDelegateProxy)3434": {
+        "encoding": "inplace",
+        "label": "contract OwnableDelegateProxy",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_contract(OwnableDelegateProxy)3434)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => contract OwnableDelegateProxy)",
+        "numberOfBytes": "32",
+        "value": "t_contract(OwnableDelegateProxy)3434"
+      }
+    }
+  }
+}

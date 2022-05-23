@@ -1,0 +1,33 @@
+{
+  "name": "pixels",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
+    "@metamask/eth-sig-util": "^4.0.1",
+    "@metamask/jazzicon": "^2.0.0",
+    "@uiw/react-color": "^1.0.10",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
+    "color": "^4.2.3",
+    "ethers": "^5.6.2",
+    "firebase": "^9.6.11",
+    "firebase-admin": "^10.1.0",
+    "framer-motion": "^6.2.10",
+    "next": "12.1.5",
+    "opensea-js": "^3.0.4",
+    "react": "18.0.0",
+    "react-dom": "18.0.0",
+    "react-toastify": "^8.2.0"
+  },
+  "devDependencies": {
+    "eslint": "8.13.0",
+    "eslint-config-next": "12.1.5"
+  }
+}
